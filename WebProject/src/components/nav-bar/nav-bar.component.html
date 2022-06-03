@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Mr Quick</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active" *ngIf="tokenService.isAuthenticated()">
+          <a class="nav-link" href="/products">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="(tokenService.isAuthenticated() && !tokenService.isDeliverer()) || (tokenService.isAuthenticated() && tokenService.isDeliverer() && tokenService.isVerified())">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item" *ngIf="tokenService.isGuest()">
+          <a class="nav-link" href="/neworder">New order</a>
+        </li>
+        <li class="nav-item" *ngIf="tokenService.isAdmin()">
+          <a class="nav-link" href="/verifications">Verifications</a>
+        </li>
+        <li class="nav-item" *ngIf="tokenService.isGuest() || (tokenService.isDeliverer() && tokenService.isVerified())">
+          <a class="nav-link" href="/allorders">My orders</a>
+        </li>
+        <li class="nav-item" *ngIf="tokenService.isGuest() || (tokenService.isDeliverer()  && tokenService.isVerified())">
+          <a class="nav-link" href="/activeorder">Active order</a>
+        </li>
+        <li class="nav-item" *ngIf="tokenService.isDeliverer() && tokenService.isVerified() && !tokenService.isOccupied()">
+          <a class="nav-link" href="/neworders">New orders</a>
+        </li>
+        <li class="nav-item" *ngIf="tokenService.isAdmin()">
+            <a class="nav-link" href="/allorders">All orders</a>
+        </li>
+        <li class="nav-item" *ngIf="tokenService.isAdmin()">
+          <a class="nav-link" href="/addproduct">Add product</a>
+        </li>
+        <li class="nav-item" *ngIf="tokenService.isAuthenticated()">
+          <a class="nav-link" role="button" (click)="logout()">Log out</a>
+        </li>
+        <li class="nav-item" *ngIf="tokenService.isDeliverer()">
+          <div class="nav-link" >
+            <p style="border:1px solid black;padding:2px" *ngIf="tokenService.isDeliverer() && tokenService.isCreated()">Not verified</p>
+            <p style="border:1px solid black;padding:2px" *ngIf="tokenService.isDeliverer() && tokenService.isVerified()">Verified</p>
+            <p style="border:1px solid black;padding:2px" *ngIf="tokenService.isDeliverer() && tokenService.isDeclined() ">Declined</p>
+          </div>
+          
+        </li>
+      </ul>
+    </div>
+  </nav>
+  

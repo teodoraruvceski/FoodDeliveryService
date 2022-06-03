@@ -1,0 +1,7 @@
+D:\teodora\Web2_Project\OnlineDeliveryServer\OnlineDeliveryServer\obj\Debug\net6.0\OnlineDeliveryServer.csproj.AssemblyReference.cache
+D:\teodora\Web2_Project\OnlineDeliveryServer\OnlineDeliveryServer\obj\Debug\net6.0\OnlineDeliveryServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\teodora\Web2_Project\OnlineDeliveryServer\OnlineDeliveryServer\obj\Debug\net6.0\OnlineDeliveryServer.AssemblyInfoInputs.cache
+D:\teodora\Web2_Project\OnlineDeliveryServer\OnlineDeliveryServer\obj\Debug\net6.0\OnlineDeliveryServer.AssemblyInfo.cs
+D:\teodora\Web2_Project\OnlineDeliveryServer\OnlineDeliveryServer\obj\Debug\net6.0\OnlineDeliveryServer.csproj.CoreCompileInputs.cache
+D:\teodora\Web2_Project\OnlineDeliveryServer\OnlineDeliveryServer\obj\Debug\net6.0\OnlineDeliveryServer.MvcApplicationPartsAssemblyInfo.cs
+D:\teodora\Web2_Project\OnlineDeliveryServer\OnlineDeliveryServer\obj\Debug\net6.0\OnlineDeliveryServer.MvcApplicationPartsAssemblyInfo.cache

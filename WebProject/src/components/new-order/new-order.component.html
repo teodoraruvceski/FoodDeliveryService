@@ -1,0 +1,60 @@
+<div class="container">
+    <h6>Ordered items</h6>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Ingredients</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of order.items">
+                <td>{{item.name}} </td>
+                <td>{{item.ingredients}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.quantity}}</td>
+                <td><button (click)="Remove(item.name)">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <h6>Available products</h6>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Ingredients</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.name}} </td>
+                <td>{{product.ingredients}}</td>
+                <td>{{product.price}}</td>
+                <td><button (click)="AddToOrder(product.id)">Add</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <div class="card-body p-lg-5">
+        <h3 class="mb-4">Delivery information</h3>
+        <form [formGroup]="deliveryForm" autocomplete="off" >
+          <div class="form-floating mb-3">
+            <input class="form-control" id="address" formControlName="address" type="text"  required>
+            <label for="name">Delivery address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" id="comment" formControlName="comment" type="text" required>
+            <label for="lastname">Comment</label>
+          </div>
+          <button (click)="ConfirmOrder()">Order</button>
+        </form>
+        <div>
+          <p *ngIf="error">{{ error }}</p>
+        </div>
+      </div>
+</div>
+

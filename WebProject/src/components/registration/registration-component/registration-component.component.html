@@ -1,0 +1,102 @@
+<div  class="page-holder align-items-center py-4 bg-gray-100 vh-100">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 px-lg-4"  *ngIf="userlogin">
+        <div class="card">
+          <div class="card-body p-lg-5">
+            <h3 class="mb-4">Hi, welcome back! 👋👋</h3>
+            <form autocomplete="off" [formGroup]="loginForm" >
+              <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" formControlName="email" type="email" placeholder="name@example.com" required>
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="floatingPassword" formControlName="password" type="password" placeholder="Password" required>
+                <label for="floatingPassword">Password</label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                <label class="form-check-label" for="remember">Remember me</label>
+              </div>
+              <button class="btn btn-primary" (click)="onLogin()" type="button">Submit</button>
+            </form>
+          </div>
+          <div class="card-footer px-lg-5 py-lg-4">                                                                             
+            <div class="text-sm text-muted">Don't have an account? <a (click)="user_register()">Register</a>.</div>
+          </div>
+        </div>
+      </div>
+      <!-- register -->
+       <div class="col-lg-6 px-lg-4" *ngIf="userregister">
+        <div class="card">
+          <div class="card-header px-lg-5">
+            <!-- <div class="card-heading text-primary">Jassa Register</div> -->
+          </div>
+          <div class="card-body p-lg-5">
+            <h3 class="mb-4">Get started with Mr Quick</h3>
+            <form [formGroup]="registrationForm" autocomplete="off" >
+              <div class="form-floating mb-3">
+                <input class="form-control" id="name" formControlName="name" type="text" placeholder="John" required>
+                <label for="name">Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="lastname" formControlName="lastname" type="text" placeholder="Johnson" required>
+                <label for="lastname">Lastname</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="username" type="text" formControlName="username" placeholder="john.johnson87" required>
+                <label for="username">Username</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="email" type="email" formControlName="email" formControlName="email" placeholder="name@example.com" required>
+                <label for="email">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="password1" formControlName="password" type="password" placeholder="Password" required>
+                <label for="password1">Password</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="password2" formControlName="password2" type="password" placeholder="Password" required>
+                <label for="password2">Confirm password</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="birthdate" formControlName="birthdate" type="date"  required>
+                <label for="birthdate">Birthdate</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="address" formControlName="address" placeholder="address" type="text"  required>
+                <label for="address">Address</label>
+              </div>
+              <label for="userRole">User role</label>
+              <div class="form-floating mb-3">
+                <select id="role" formControlName="role">
+                  <option value="GUEST">GUEST</option>
+                  <option value="DELIVERER">DELIVERER</option>
+                  <option value="ADMIN">ADMIN</option>
+                  </select>                
+              </div>
+              <label for="image">Image</label>
+              <div class="form-floating mb-3">
+                <input formControlName="image" (change)="onSelectFile($event)" type="file" id="image" name="image">
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="agree" id="agree">
+                <label class="form-check-label" for="agree">I agree with the <a href="#">Terms & Conditions</a>.</label>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary" (click)="onRegister()" id="register" type="button" name="registerSubmit">Register</button>
+              </div>
+            </form>
+            <div>
+              <p *ngIf="error">{{ error }}</p>
+            </div>
+          </div>
+          <div class="card-footer px-lg-5 py-lg-4">
+            <div class="text-sm text-muted">Already have an account? <a (click)="user_login()">Login</a>.</div>
+          </div>
+        </div>
+      </div>
+   
+    </div>
+  </div>
+</div>

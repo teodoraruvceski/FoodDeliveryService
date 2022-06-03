@@ -1,0 +1,53 @@
+<div class="col-lg-6 px-lg-4">
+    <div class="card">
+      <div class="card-header px-lg-5">
+      </div>
+      <div class="card-body p-lg-5">
+        <h3 class="mb-4">Get started with Mr Quick</h3>
+        <form [formGroup]="profileChangeForm" autocomplete="off" >
+          <div class="form-floating mb-3">
+            <input class="form-control" id="name" formControlName="name" type="text"  required>
+            <label for="name">Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" id="lastname" formControlName="lastname" type="text" required>
+            <label for="lastname">Lastname</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" id="username" type="text" formControlName="username" required>
+            <label for="username">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" id="email" type="email" formControlName="email"  required>
+            <label for="email">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" id="birthdate" formControlName="birthdate" type="date"  required>
+            <label for="birthdate">Birthdate</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" id="address" formControlName="address"  type="text"  required>
+            <label for="address">Address</label>
+          </div>
+         
+          <label for="image">Image</label>
+          <div class="form-floating mb-3">
+            <input formControlName="image"  (change)="onSelectFile($event)" type="file" type="file" id="image" name="image">
+          </div>
+          <img  [src]="[this.url]"
+          height="130"
+          width="100"/>
+          <div class="form-group">
+            <button class="btn btn-primary" (click)="onChange()" id="change" type="button" name="changeProfile">Save changes</button>
+          </div>
+        </form>
+        <div>
+          <p *ngIf="error">{{ error }}</p>
+        </div>
+      </div>
+    
+    </div>
+
+
+</div>
+
